@@ -38,7 +38,7 @@ close.Font = Enum.Font.GothamBold
 close.TextScaled = true
 round(close, 6)
 
-local box = Instance.new("Insert Key Here", main)
+local box = Instance.new("TextBox", main)
 box.Size = UDim2.new(0.9, 0, 0, 35)
 box.Position = UDim2.new(0.05, 0, 0.4, 0)
 box.PlaceholderText = "Enter Key Here..."
@@ -98,7 +98,7 @@ end)
 
 verify.MouseButton1Click:Connect(function()
 	message.Visible = true
-	message.Text = "Key inválido"
+	message.Text = "invalid key"
 	task.wait(2)
 	message.Visible = false
 end)

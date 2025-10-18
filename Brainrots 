@@ -1,20 +1,14 @@
---// XrX - Demo Script (DEMO SAFE VERSION)
---// Totalmente inofensivo. Apenas interface de teste.
-
--- Serviços
 local player = game.Players.LocalPlayer
 local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
-gui.Name = "XrXDemoUI"
+gui.Name = "XrXUI"
 gui.ResetOnSpawn = false
 
--- Função para criar cantos arredondados
 local function round(obj, rad)
 	local c = Instance.new("UICorner")
 	c.CornerRadius = UDim.new(0, rad)
 	c.Parent = obj
 end
 
--- Fundo principal
 local main = Instance.new("Frame")
 main.Size = UDim2.new(0, 400, 0, 180)
 main.Position = UDim2.new(0.5, -200, 0.5, -90)
@@ -24,7 +18,6 @@ main.Draggable = true
 round(main, 10)
 main.Parent = gui
 
--- Título
 local title = Instance.new("TextLabel", main)
 title.Size = UDim2.new(1, -40, 0, 30)
 title.Position = UDim2.new(0, 10, 0, 5)
@@ -35,7 +28,6 @@ title.BackgroundTransparency = 1
 title.Font = Enum.Font.GothamBold
 title.TextXAlignment = Enum.TextXAlignment.Left
 
--- Botão fechar
 local close = Instance.new("TextButton", main)
 close.Size = UDim2.new(0, 30, 0, 30)
 close.Position = UDim2.new(1, -35, 0, 5)
@@ -46,8 +38,7 @@ close.Font = Enum.Font.GothamBold
 close.TextScaled = true
 round(close, 6)
 
--- Caixa de texto (key)
-local box = Instance.new("insert key here...", main)
+local box = Instance.new("Insert Key Here", main)
 box.Size = UDim2.new(0.9, 0, 0, 35)
 box.Position = UDim2.new(0.05, 0, 0.4, 0)
 box.PlaceholderText = "Enter Key Here..."
@@ -57,7 +48,6 @@ box.Font = Enum.Font.Gotham
 box.TextScaled = true
 round(box, 8)
 
--- Botão "Get Key"
 local getkey = Instance.new("TextButton", main)
 getkey.Size = UDim2.new(0.4, 0, 0, 35)
 getkey.Position = UDim2.new(0.05, 0, 0.7, 0)
@@ -68,7 +58,6 @@ getkey.Font = Enum.Font.GothamBold
 getkey.TextScaled = true
 round(getkey, 8)
 
--- Botão "Verify Key"
 local verify = Instance.new("TextButton", main)
 verify.Size = UDim2.new(0.4, 0, 0, 35)
 verify.Position = UDim2.new(0.55, 0, 0.7, 0)
@@ -79,7 +68,6 @@ verify.Font = Enum.Font.GothamBold
 verify.TextScaled = true
 round(verify, 8)
 
--- Mensagem
 local message = Instance.new("TextLabel", main)
 message.Size = UDim2.new(1, 0, 0, 25)
 message.Position = UDim2.new(0, 0, 1, -25)
@@ -90,7 +78,6 @@ message.TextScaled = true
 message.Text = ""
 message.Visible = false
 
--- Bolinha flutuante (aparece quando fecha)
 local bubble = Instance.new("ImageButton", gui)
 bubble.Size = UDim2.new(0, 50, 0, 50)
 bubble.Position = UDim2.new(1, -70, 1, -80)
@@ -101,18 +88,17 @@ bubble.Visible = false
 bubble.Active = true
 bubble.Draggable = true
 
--- Funções
 getkey.MouseButton1Click:Connect(function()
 	setclipboard("https://joyful-bunny-b503aa.netlify.app/")
 	message.Visible = true
-	message.Text = "copy this into your browser."
+	message.Text = "Use This Site to Get the Key"
 	task.wait(2)
 	message.Visible = false
 end)
 
 verify.MouseButton1Click:Connect(function()
 	message.Visible = true
-	message.Text = "Invalid Key"
+	message.Text = "Key inválido"
 	task.wait(2)
 	message.Visible = false
 end)
